@@ -17,7 +17,7 @@ If you would rather do your own backups manually, your (live) world is contained
 ### How Backups Work
 If **BACKUPS** is set to **true**, then each time the container is run, it will automatically create a backup of your **WORLD_NAME** in the **/backups** folder. Each backup will be appended with the date and time (%Y-%m-%d_%H-%M-%S format). 
 
-> **Example**: If your world is called **"Planetary Minecraft Server"**, and the map is saved on January 2nd, 2024 at exactly 3:45am, the backup will be called **"jellie-frontier-20204-01-02_03-45-00"**.
+> **Example**: If your world is called **"planetary-minecraft-server"**, and the map is saved on January 2nd, 2024 at exactly 3:45am, the backup will be called **"planetary-minecraft-server-20204-01-02_03-45-00"**.
 
 # Volumes
 > :warning: **Important**: It is highly recommended that you map these volumes to your host machine. Otherwise all save data and configuration will be lost when the container is deleted/updated.
@@ -39,7 +39,7 @@ These environment variables map directly to the settings in the **server.propert
 | BACKUPS | boolean (true, false) | false | See [World Backups](#world-backups). |
 | DIFFICULTY | peaceful, easy, normal, hard | easy | The [difficulty](https://minecraft.wiki/w/Difficulty) (such as damage dealt by mobs and the way hunger and poison affects players) of the server.<br>If a legacy difficulty number is specified, it is silently converted to a difficulty name.<br>peaceful (0)<br>easy (1)<br>normal (2)<br>hard (3) |
 | GAMEMODE | survival, creative, adventure, spectator | survival | The default [game mode](https://minecraft.wiki/w/Game_mode).<br>If a legacy game mode number is specified, it is silently converted to a game mode name.<br>[survival](https://minecraft.wiki/w/Survival) (0)<br>[creative](https://minecraft.wiki/w/Creative) (1)<br>[adventure](https://minecraft.wiki/w/Adventure) (2)<br>[spectator](https://minecraft.wiki/w/Spectator) (3) |
-| LEVEL_NAME | any string | "Planetary Minecraft Server" | The world name and the world directory path.<br>If a directory at this path exists and is a valid world, it will be loaded by the server. If it doesn't exist or is not a valid world, the server will generate a new world in this directory, creating the directory and it's parents if necessary, and will use the provided value as its name. |
+| LEVEL_NAME | any string | "planetary-minecraft-server" | The world name and the world directory path.<br>If a directory at this path exists and is a valid world, it will be loaded by the server. If it doesn't exist or is not a valid world, the server will generate a new world in this directory, creating the directory and it's parents if necessary, and will use the provided value as its name. |
 | LEVEL_SEED | any string | *null* | Use to randomize the world. If left empty, a seed is chosen at random. |
 | MAX_PLAYERS | any 32-bit iteger | 10 | The maximum number of players that can be connected to the server at the same time. |
 | MOTD | any string | "Deployed using the Planetary Server Manager" | The message displayed in the server list of the client, below the server name.<br>The MOTD supports [color and formatting codes](https://minecraft.wiki/w/Formatting_codes#Use_in_server.properties_and_pack.mcmeta).<br>The MOTD supports non-ASCII characters, such as "♥".<br>If the MOTD is over 59 characters, the server list may report a communication error. |
