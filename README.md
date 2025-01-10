@@ -35,6 +35,7 @@ These environment variables map directly to the settings in the **server.propert
 
 | Variable | Possible Values | Default Value | Notes | 
 | --- | --- | --- | --- |
+| ALLOW_LIST | boolean (true, false) | true | If set to **true**, only users in the **whitelist.json** file will be allowed to connect. See the [whitelist command](https://minecraft.wiki/w/Commands/whitelist) and [whitelist.json](https://minecraft.wiki/w/Whitelist.json) for information on how to populate this list.<br>This is a generalized variable that all PSM containers share. It changes both `white-list` and `enforce-whitelist` in the **server. properties**.<br><br>**Note**: *Ops are automatically whitelisted, and there is no need to add them to the whitelist.* |
 | AUTO_UPDATE | boolean (true, false) | true | See [Auto Updates](#auto-updates). |
 | BACKUPS | boolean (true, false) | false | See [World Backups](#world-backups). |
 | DIFFICULTY | peaceful, easy, normal, hard | easy | The [difficulty](https://minecraft.wiki/w/Difficulty) (such as damage dealt by mobs and the way hunger and poison affects players) of the server.<br>If a legacy difficulty number is specified, it is silently converted to a difficulty name.<br>peaceful (0)<br>easy (1)<br>normal (2)<br>hard (3) |
