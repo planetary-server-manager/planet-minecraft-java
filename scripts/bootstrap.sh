@@ -1,14 +1,16 @@
 #!/bin/bash
 cat logo.txt
+cd /scripts
 if $AUTO_UPDATE ; then
-    ./scripts/update.sh
+    ./update.sh
 else
     echo "Auto-updates disabled. Skipping."
 fi && \
 if $BACKUPS ; then
-    ./scripts/backup-map.sh
+    ./backup-map.sh
 else
     echo "Backups disabled. Skipping."
 fi && \
-./scripts/manage-server-files.sh && \
-./scripts/server.sh
+./manage-server-files.sh && \
+./allowlist.sh && \
+./server.sh
