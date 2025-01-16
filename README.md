@@ -1,4 +1,4 @@
-# Planetary Minecraft Java Server
+# 🪐 Planetary Minecraft Java Server
 PSM container image for Minecraft Java. It provides tight integration with the [PSM API](https://github.com/planetary-server-manager/api-server).
 
 # Secure by Default
