@@ -70,13 +70,10 @@ RUN apt-get install default-jre -y
 
 RUN usermod -l minecraft ubuntu
 
-COPY /scripts/update.sh /scripts/update.sh
-COPY /scripts/server.sh /scripts/server.sh
-COPY /scripts/bootstrap.sh /scripts/bootstrap.sh
-COPY /scripts/backup-map.sh /scripts/backup-map.sh
-COPY /scripts/manage-server-files.sh /scripts/manage-server-files.sh
-COPY /scripts/update-properties.sh /scripts/update-properties.sh
+COPY /scripts /scripts
 
 RUN chmod -R 770 /scripts && chown -R minecraft /scripts
+
+USER minecraft
 
 CMD ["/bin/bash", "/scripts/bootstrap.sh"]
